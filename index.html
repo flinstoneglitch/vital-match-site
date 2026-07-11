@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Match • More Donors. Better Data. Fed into the National System.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0F766E 0%, #134E4A 100%);
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .step-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            line-height: 1;
+            font-weight: 700;
+            color: #0F766E;
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+    <!-- Top Banner -->
+    <div class="bg-teal-900 text-white text-center py-2 text-sm font-medium">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <span><strong>Conceptual Mockup</strong> — Early vision for discussion. Name, features, and positioning will evolve with regulatory, medical, and ethical input.</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-zinc-200 sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="px-6 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    <div class="flex items-center gap-x-2.5">
+                        <div class="w-9 h-9 bg-teal-700 rounded-2xl flex items-center justify-center shadow-inner">
+                            <i class="fa-solid fa-heart-pulse text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-display text-3xl font-semibold tracking-tighter text-teal-900">Vital</span>
+                            <span class="font-display text-3xl font-semibold tracking-tighter text-teal-700">Match</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block px-3 py-1 text-xs font-mono tracking-[2px] text-teal-600 bg-teal-100 rounded-full">BETA VISION</div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#how" class="hover:text-teal-700 transition-colors">How it works</a>
+                    <a href="#impact" class="hover:text-teal-700 transition-colors">Impact</a>
+                    <a href="#for-partners" class="hover:text-teal-700 transition-colors">For Partners</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <button onclick="showPartnerModal()"
+                            class="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-3xl border border-zinc-300 hover:bg-zinc-100 transition-all">
+                        For Partners
+                    </button>
+                    
+                    <button onclick="joinWaitlist()"
+                            class="inline-flex items-center px-6 py-2.5 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold rounded-3xl">
+                        Join Waitlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white">
+        <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-20">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 border border-white/20">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium tracking-wide">Strengthening the national transplant system with better donor data</span>
+                </div>
+                
+                <h1 class="font-display text-6xl md:text-7xl leading-[1.05] tracking-tighter font-semibold mb-6">
+                    More Donors.<br>
+                    Better Data.<br>
+                    <span class="text-teal-300">Fed into the National System.</span>
+                </h1>
+                
+                <p class="max-w-lg text-xl text-teal-100 mb-10 leading-relaxed">
+                    Vital Match uses clinical-grade mail-in bio-profiling and explainable AI to enlarge and enrich the organ donor pool — then securely delivers that improved data to UNOS, OPOs, and transplant centers.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="joinWaitlist()"
+                            class="group inline-flex items-center justify-center gap-x-3 bg-white text-teal-900 hover:bg-zinc-100 px-8 py-4 rounded-3xl text-lg font-semibold shadow-xl active:scale-[0.985]">
+                        <span>Become a Founding Participant</span>
+                    </button>
+                    
+                    <button onclick="document.getElementById('how').scrollIntoView({ behavior: 'smooth' })"
+                            class="inline-flex items-center justify-center gap-x-2 border border-white/40 hover:bg-white/10 px-8 py-4 rounded-3xl text-lg font-medium">
+                        See how it works
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="bg-white border-y border-zinc-200">
+        <div class="max-w-screen-xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-y-8 text-center">
+            <div>
+                <div class="metric-value">103,000+</div>
+                <div class="text-sm font-medium text-zinc-500 mt-1">Americans on active waitlists</div>
+            </div>
+            <div>
+                <div class="metric-value">~6,000</div>
+                <div class="text-sm font-medium text-zinc-500 mt-1">Die waiting each year</div>
+            </div>
+            <div>
+                <div class="metric-value">Potential</div>
+                <div class="text-sm font-medium text-zinc-500 mt-1">Hundreds more successful transplants per year</div>
+            </div>
+            <div>
+                <div class="metric-value">Lean Model</div>
+                <div class="text-sm font-medium text-zinc-500 mt-1">Built to strengthen the existing system</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div id="how" class="max-w-screen-xl mx-auto px-6 pt-16 pb-12">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+                <div class="text-teal-700 font-semibold tracking-[1.5px] text-xs mb-2">SIMPLE. SECURE. POWERFUL.</div>
+                <h2 class="section-header tracking-tighter">How Vital Match Works</h2>
+            </div>
+            <p class="max-w-sm text-zinc-600 mt-3 md:mt-0 md:text-right">From your home to better data in the national system — with full consent.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- Step 1 -->
+            <div class="step-card bg-white rounded-3xl p-7 border border-zinc-100">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-box fa-lg"></i>
+                </div>
+                <div class="font-semibold text-xl tracking-tight mb-3">1. Order Your Kit</div>
+                <p class="text-zinc-600 leading-relaxed">Request a secure at-home bio-profiling kit delivered by USPS. Simple saliva or dried blood spot collection.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card bg-white rounded-3xl p-7 border border-zinc-100">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-vial fa-lg"></i>
+                </div>
+                <div class="font-semibold text-xl tracking-tight mb-3">2. Send Your Sample</div>
+                <p class="text-zinc-600 leading-relaxed">Collect at home and drop it in any mailbox. Our CLIA-certified lab partners handle processing with full chain-of-custody.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card bg-white rounded-3xl p-7 border border-zinc-100">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-microchip fa-lg"></i>
+                </div>
+                <div class="font-semibold text-xl tracking-tight mb-3">3. AI + Lab Profiling</div>
+                <p class="text-zinc-600 leading-relaxed">High-resolution HLA typing and extended immunogenetic profiling. Our explainable AI builds rich compatibility profiles.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card bg-white rounded-3xl p-7 border border-zinc-100">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-handshake fa-lg"></i>
+                </div>
+                <div class="font-semibold text-xl tracking-tight mb-3">4. Data Feeds the National System</div>
+                <p class="text-zinc-600 leading-relaxed">Your consented, enriched profile is made available to authorized parts of the existing national transplant system (UNOS, OPOs, transplant centers).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kit Visual -->
+    <div class="max-w-screen-xl mx-auto px-6 pb-16">
+        <div class="bg-white border border-zinc-200 rounded-3xl p-8 md:p-12">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <div class="text-teal-700 font-semibold tracking-[1.5px] text-xs mb-3">THE DONOR EXPERIENCE</div>
+                    <h3 class="font-display text-4xl tracking-tighter mb-4">Simple. Secure. From home.</h3>
+                    <p class="text-zinc-600">Our mail-in kit is designed to be easy and dignified. Clear instructions, prepaid return, and full privacy protections built in.</p>
+                    
+                    <div class="mt-6 flex items-center gap-x-4 text-sm">
+                        <div class="flex items-center gap-x-2">
+                            <i class="fa-solid fa-check text-teal-600"></i>
+                            <span>5-minute collection</span>
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                            <i class="fa-solid fa-check text-teal-600"></i>
+                            <span>Prepaid return</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="imagine_images/MOkMv.jpg" alt="Vital Match Donor Profile Kit" class="rounded-2xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impact -->
+    <div id="impact" class="max-w-screen-xl mx-auto px-6 pb-16">
+        <div class="text-center mb-10">
+            <div class="text-teal-700 font-semibold tracking-[1.5px] text-xs mb-2">WHY THIS MATTERS</div>
+            <h2 class="section-header tracking-tighter">More donors. Better data. More lives saved.</h2>
+        </div>
+
+        <div class="flex justify-center mb-8">
+            <img src="imagine_images/3suUS.jpg" alt="Vital Match Impact: More Donors + Better Data = More Lives Saved" class="max-w-full rounded-2xl shadow">
+        </div>
+
+        <div class="max-w-2xl mx-auto text-center text-zinc-600">
+            <p>By enlarging the registered donor pool and dramatically improving the quality of donor profiles available to the national system, Vital Match aims to help increase the number of successful transplants each year.</p>
+        </div>
+    </div>
+
+    <!-- For Partners Section -->
+    <div id="for-partners" class="bg-white border-y border-zinc-200 py-16">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <div class="text-teal-700 font-semibold tracking-[1.5px] text-xs mb-3">FOR OPOs, TRANSPLANT CENTERS &amp; PARTNERS</div>
+                <h2 class="section-header tracking-tighter">Better donor data.<br>Directly into your workflows.</h2>
+                <p class="mt-4 text-lg text-zinc-600">Vital Match does not allocate organs. We enlarge and enrich the donor profiles the national system already uses — through clinical-grade mail-in profiling and explainable AI.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-zinc-50 border border-zinc-100 rounded-3xl p-7">
+                    <div class="font-semibold mb-3">High-Resolution HLA + Extended Profiling</div>
+                    <div class="text-sm text-zinc-600">Clinical-grade data that meets the standards transplant teams rely on.</div>
+                </div>
+                <div class="bg-zinc-50 border border-zinc-100 rounded-3xl p-7">
+                    <div class="font-semibold mb-3">Explainable AI Insights</div>
+                    <div class="text-sm text-zinc-600">Predictive signals for graft success, logistics, and match ranking support — designed as decision support, not replacement.</div>
+                </div>
+                <div class="bg-zinc-50 border border-zinc-100 rounded-3xl p-7">
+                    <div class="font-semibold mb-3">Secure Data Feeds</div>
+                    <div class="text-sm text-zinc-600">Delivered through standards-aligned channels that fit into existing OPO and center workflows.</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <button onclick="showPartnerModal()" 
+                        class="inline-flex items-center bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-4 rounded-3xl">
+                    Request Early Partnership Discussion
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-zinc-900 text-white py-16">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <h2 class="font-display text-5xl tracking-tighter mb-4">This is how we grow the gift.</h2>
+            <p class="max-w-md mx-auto text-xl text-zinc-400">By making the donor data available to the national system richer, larger, and smarter — responsibly and in partnership.</p>
+            
+            <div class="mt-10">
+                <button onclick="joinWaitlist()" 
+                        class="px-10 py-4 bg-white hover:bg-zinc-100 text-teal-900 font-semibold rounded-3xl text-lg inline-flex items-center justify-center">
+                    Join the Founding Participant Waitlist
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-zinc-400 text-xs py-8 border-t border-zinc-800">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            © 2026 Vital Match (Conceptual). This is not a real operating service. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlist-modal" onclick="if (event.target.id === 'waitlist-modal') hideWaitlist()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-md w-full p-8">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <div class="font-display text-3xl tracking-tighter">Join the waitlist</div>
+                    <div class="text-sm text-zinc-500">Be among the first to help shape this.</div>
+                </div>
+                <button onclick="hideWaitlist()" class="text-2xl leading-none text-zinc-400 hover:text-zinc-600">×</button>
+            </div>
+            
+            <form onsubmit="submitWaitlist(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium tracking-wider text-zinc-500 mb-1.5">FULL NAME</label>
+                        <input type="text" id="name" required class="w-full border border-zinc-200 focus:border-teal-600 rounded-2xl px-5 py-3 text-sm outline-none" placeholder="Alex Rivera">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium tracking-wider text-zinc-500 mb-1.5">EMAIL</label>
+                            <input type="email" id="email" required class="w-full border border-zinc-200 focus:border-teal-600 rounded-2xl px-5 py-3 text-sm outline-none" placeholder="you@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium tracking-wider text-zinc-500 mb-1.5">ZIP CODE</label>
+                            <input type="text" id="zip" required class="w-full border border-zinc-200 focus:border-teal-600 rounded-2xl px-5 py-3 text-sm outline-none" placeholder="97201">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="mt-6 w-full bg-teal-700 hover:bg-teal-800 text-white py-4 rounded-3xl font-semibold text-sm tracking-wider">
+                    REQUEST EARLY ACCESS
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function joinWaitlist() {
+            document.getElementById('waitlist-modal').classList.remove('hidden');
+            document.getElementById('waitlist-modal').classList.add('flex');
+        }
+        
+        function hideWaitlist() {
+            const modal = document.getElementById('waitlist-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function submitWaitlist(e) {
+            e.preventDefault();
+            const modalContent = document.getElementById('waitlist-modal').querySelector('div');
+            modalContent.innerHTML = `
+                <div class="text-center py-8">
+                    <i class="fa-solid fa-check-circle text-6xl text-emerald-500 mb-5"></i>
+                    <h3 class="font-display text-3xl tracking-tight mb-2">You're on the list.</h3>
+                    <p class="text-zinc-600">Thank you. We'll be in touch as we build this together.</p>
+                    <button onclick="hideWaitlist()" class="mt-8 px-8 py-2.5 text-sm border border-zinc-300 rounded-3xl hover:bg-zinc-50">Close</button>
+                </div>
+            `;
+        }
+        
+        function showPartnerModal() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-6';
+            modal.innerHTML = `
+                <div onclick="event.target.remove()" class="bg-white rounded-3xl max-w-lg w-full p-8">
+                    <div class="flex justify-between mb-6">
+                        <div class="font-display text-2xl tracking-tighter">For Partners &amp; Sponsors</div>
+                        <button class="text-3xl leading-none text-zinc-300 hover:text-zinc-500" onclick="event.target.closest('.fixed').remove()">×</button>
+                    </div>
+                    <p class="text-sm text-zinc-600">Vital Match is exploring early partnerships with OPOs, transplant centers, and aligned organizations. We are currently forming our clinical advisory board and pilot partner list.</p>
+                    
+                    <div class="my-6 p-5 bg-zinc-50 border border-zinc-100 rounded-2xl text-sm">
+                        <div class="font-semibold mb-2">Early Access Program</div>
+                        <div>We are seeking partners interested in shaping the enriched donor data model and integration pathways.</div>
+                    </div>
+                    
+                    <button onclick="contactTeam(); this.closest('.fixed').remove()" 
+                            class="w-full py-3.5 bg-teal-700 text-white rounded-3xl font-medium text-sm">Request Partnership Discussion</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function contactTeam() {
+            alert("Thank you. In a real version this would open a contact form or email. For now, please reach out via the email template provided separately.");
+        }
+    </script>
+</body>
+</html>
